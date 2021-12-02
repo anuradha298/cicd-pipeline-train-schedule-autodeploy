@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: train-schedule
-        image: ngnix':'latest
+        image: $DOCKER_IMAGE_NAME:latest
         ports:
         - containerPort: 30000
         livenessProbe:
@@ -46,4 +46,4 @@ spec:
         resources:
           requests:
             cpu: 200m
-© 2021 GitHub, Inc.
+
