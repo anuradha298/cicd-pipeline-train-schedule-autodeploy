@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         //be sure to replace "bhavukm" with your own Docker Hub username
-        DOCKER_IMAGE_NAME = "bhavukm/train-schedule"
+        DOCKER_IMAGE_NAME = "2981984/train-schedule"
     }
     stages {
         stage('Build') {
@@ -48,12 +48,12 @@ pipeline {
             steps {
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube-canary.yml',
+                    configs: 'pod.yml',
                     enableConfigSubstitution: true
                 )
             }
         }
-        stage('DeployToProduction') {
+        /* stage('DeployToProduction') {
             when {
                 branch 'master'
             }
@@ -73,7 +73,7 @@ pipeline {
                     configs: 'train-schedule-kube.yml',
                     enableConfigSubstitution: true
                 )
-            }
+            } * /
         }
     }
 }
