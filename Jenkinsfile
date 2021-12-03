@@ -39,7 +39,7 @@ pipeline {
           
             steps {
                 kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
+                    kubeconfigId: '23f6fe01-b5b5-4fec-84f5-66eedf6b9d92',
                     configs: 'pod.yml',
                     enableConfigSubstitution: true
                 )
